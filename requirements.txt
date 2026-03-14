@@ -1,0 +1,11 @@
+streamlit
+fastapi
+uvicorn
+pydantic
+requests
+pandas
+plotly
+transformers
+torch
+safetensors
+openai
