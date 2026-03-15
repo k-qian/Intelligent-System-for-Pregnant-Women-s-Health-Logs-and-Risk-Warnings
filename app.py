@@ -1,8 +1,20 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from database import init_db, register_user, login_user, add_health_log, get_user_logs
-from ai_utils import get_sentiment, get_ai_advice, get_risk_prediction
+#from database import init_db, register_user, login_user, add_health_log, get_user_logs
+#from ai_utils import get_sentiment, get_ai_advice, get_risk_prediction
+
+try:
+    from database import init_db, register_user, login_user, add_health_log, get_user_logs
+except ImportError:
+    from .database import init_db, register_user, login_user, add_health_log, get_user_logs
+
+
+try:
+    from ai_utils import get_sentiment, get_ai_advice, get_risk_prediction
+except ImportError:
+    from .ai_utils import get_sentiment, get_ai_advice, get_risk_prediction
+
 
 init_db()
 st.set_page_config(page_title="孕婦健康紀錄系統", layout="wide")
